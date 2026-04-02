@@ -156,8 +156,33 @@ npm run build
 ---
 
 ## Screenshots
+<h2>Admin Interface:</h2>
+<p> Login and Signup interface:</p>
+<img width="1905" height="867" alt="image" src="https://github.com/user-attachments/assets/14a6285d-f0ee-4911-b9a2-3f84e9e5f8c5" />
 
-(Add your screenshots here)
+<p>Automatically generated insights:</p>
+<img width="1883" height="871" alt="image" src="https://github.com/user-attachments/assets/72ec76e0-c78d-4c51-8b3d-7bf6c420837c" />
+<p>Transactions Management:</p>
+<img width="1883" height="854" alt="image" src="https://github.com/user-attachments/assets/d49abd8e-3a38-483c-a95d-c81c3defa963" />
+
+<p>Add new transactions:</p>
+<img width="1889" height="855" alt="image" src="https://github.com/user-attachments/assets/c72318f1-04ee-4b94-954f-b2c7922401c1" />
+<p>Exported CSV File:</p>
+<img width="1250" height="658" alt="image" src="https://github.com/user-attachments/assets/2731fec8-0fe7-4eb8-98a7-4107e3341565" />
+<p>Light Mode:</p>
+<img width="1860" height="864" alt="image" src="https://github.com/user-attachments/assets/3ea80136-c473-4604-a757-9b5b585c4e83" />
+
+<h2>Viewer Interface:</h2>
+<img width="1748" height="850" alt="image" src="https://github.com/user-attachments/assets/4f1c76c1-6a38-4774-aa99-885b46879fee" />
+
+<p>Role-Based UI(Read Only Interface):</p>
+<img width="1875" height="859" alt="image" src="https://github.com/user-attachments/assets/d9f292cf-26c3-4d91-963c-d27cc81298b7" />
+
+
+
+
+
+
 
 ---
 
