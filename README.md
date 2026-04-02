@@ -136,7 +136,7 @@ This ensures a clean data flow and scalable architecture.
 ### Installation
 
 ```
-git clone <your-repository-link>
+git clone https://github.com/sanjanapatil01/finance-hub.git
 cd finance-dashboard
 npm install
 ```
@@ -161,13 +161,7 @@ npm run build
 
 ---
 
-## Future Improvements
 
-* Integration with real backend APIs
-* Secure authentication system
-* Advanced analytics and reporting
-* Persistent database storage
-* Performance optimization for large datasets
 
 ---
 
