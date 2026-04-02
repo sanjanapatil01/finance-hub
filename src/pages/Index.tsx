@@ -1,16 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { SummaryCards } from "@/components/dashboard/SummaryCards";
+import { BalanceChart } from "@/components/dashboard/BalanceChart";
+import { SpendingPieChart } from "@/components/dashboard/SpendingPieChart";
+import { TransactionsTable } from "@/components/dashboard/TransactionsTable";
+import { InsightsSection } from "@/components/dashboard/InsightsSection";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="space-y-6">
+        <DashboardHeader />
+        <SummaryCards />
+        <InsightsSection />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <BalanceChart />
+          <SpendingPieChart />
+        </div>
+        <TransactionsTable />
+      </div>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
