@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useFinance } from "@/context/FinanceContext";
 import { filterTransactions, formatCurrency } from "@/utils/finance";
-import { Trash2, Search, ArrowUpDown, Plus } from "lucide-react";
+import { exportTransactionsCSV } from "@/utils/exportCSV";
+import { Trash2, Search, ArrowUpDown, Plus, Download } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,9 +26,12 @@ export function TransactionsTable() {
 
   return (
     <>
-      <Card className="animate-slide-up">
+      <Card className="animate-slide-up" style={{ animationDelay: "200ms", animationFillMode: "both" }}>
         <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <CardTitle className="text-base">Transactions</CardTitle>
+          <div>
+            <CardTitle className="text-base">Recent Transactions</CardTitle>
+            <p className="text-xs text-muted-foreground mt-1">{filtered.length} transaction{filtered.length !== 1 ? "s" : ""} found</p>
+          </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -48,6 +52,16 @@ export function TransactionsTable() {
                 <SelectItem value="expense">Expense</SelectItem>
               </SelectContent>
             </Select>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => exportTransactionsCSV(filtered)}
+              className="gap-1.5"
+              disabled={filtered.length === 0}
+            >
+              <Download className="h-4 w-4" />
+              Export CSV
+            </Button>
             {role === "admin" && (
               <Button size="sm" onClick={() => setModalOpen(true)} className="gap-1.5">
                 <Plus className="h-4 w-4" />
@@ -58,8 +72,9 @@ export function TransactionsTable() {
         </CardHeader>
         <CardContent>
           {filtered.length === 0 ? (
-            <div className="flex h-32 items-center justify-center text-sm text-muted-foreground">
-              No transactions found
+            <div className="flex flex-col h-32 items-center justify-center text-sm text-muted-foreground gap-2 animate-fade-in">
+              <p className="font-medium">No transactions found</p>
+              <p className="text-xs">Try adjusting your search or filters</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -67,19 +82,19 @@ export function TransactionsTable() {
                 <TableHeader>
                   <TableRow>
                     <TableHead>
-                      <button onClick={() => toggleSort("date")} className="inline-flex items-center gap-1 text-xs font-medium">
+                      <button onClick={() => toggleSort("date")} className="inline-flex items-center gap-1 text-xs font-medium hover:text-foreground transition-colors">
                         Date <ArrowUpDown className="h-3 w-3" />
                       </button>
                     </TableHead>
                     <TableHead>Description</TableHead>
                     <TableHead>
-                      <button onClick={() => toggleSort("category")} className="inline-flex items-center gap-1 text-xs font-medium">
+                      <button onClick={() => toggleSort("category")} className="inline-flex items-center gap-1 text-xs font-medium hover:text-foreground transition-colors">
                         Category <ArrowUpDown className="h-3 w-3" />
                       </button>
                     </TableHead>
                     <TableHead>Type</TableHead>
                     <TableHead className="text-right">
-                      <button onClick={() => toggleSort("amount")} className="inline-flex items-center gap-1 text-xs font-medium">
+                      <button onClick={() => toggleSort("amount")} className="inline-flex items-center gap-1 text-xs font-medium hover:text-foreground transition-colors">
                         Amount <ArrowUpDown className="h-3 w-3" />
                       </button>
                     </TableHead>
@@ -87,9 +102,13 @@ export function TransactionsTable() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {filtered.map((tx) => (
-                    <TableRow key={tx.id} className="animate-fade-in">
-                      <TableCell className="text-sm">
+                  {filtered.map((tx, i) => (
+                    <TableRow
+                      key={tx.id}
+                      className="animate-fade-in transition-colors hover:bg-muted/50"
+                      style={{ animationDelay: `${i * 30}ms`, animationFillMode: "both" }}
+                    >
+                      <TableCell className="text-sm text-muted-foreground">
                         {new Date(tx.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                       </TableCell>
                       <TableCell className="text-sm font-medium">{tx.description}</TableCell>
@@ -101,12 +120,17 @@ export function TransactionsTable() {
                           {tx.type}
                         </Badge>
                       </TableCell>
-                      <TableCell className={`text-right text-sm font-medium ${tx.type === "income" ? "text-success" : "text-destructive"}`}>
+                      <TableCell className={`text-right text-sm font-semibold ${tx.type === "income" ? "text-success" : "text-destructive"}`}>
                         {tx.type === "income" ? "+" : "-"}{formatCurrency(tx.amount)}
                       </TableCell>
                       {role === "admin" && (
                         <TableCell>
-                          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={() => deleteTransaction(tx.id)}>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8 text-muted-foreground hover:text-destructive transition-colors"
+                            onClick={() => deleteTransaction(tx.id)}
+                          >
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </TableCell>

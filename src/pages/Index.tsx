@@ -17,6 +17,9 @@ const Index = () => {
           <SpendingPieChart />
         </div>
         <TransactionsTable />
+        <footer className="text-center text-xs text-muted-foreground py-4 border-t border-border">
+          <p>FinanceFlow Dashboard &middot; Your data is stored locally in your browser</p>
+        </footer>
       </div>
     </div>
   );
