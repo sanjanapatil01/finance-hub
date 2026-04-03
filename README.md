@@ -161,22 +161,29 @@ npm run build
 <img width="1905" height="867" alt="image" src="https://github.com/user-attachments/assets/14a6285d-f0ee-4911-b9a2-3f84e9e5f8c5" />
 
 <p>Automatically generated insights:</p>
-<img width="1883" height="871" alt="image" src="https://github.com/user-attachments/assets/72ec76e0-c78d-4c51-8b3d-7bf6c420837c" />
+<img width="1887" height="873" alt="image" src="https://github.com/user-attachments/assets/c9559f39-0f1f-4cdb-ab46-2e0e2fc4bbc0" />
+<img width="1881" height="872" alt="image" src="https://github.com/user-attachments/assets/03fd2b88-8c23-46dc-87d3-e05c3dfcc550" />
+<img width="1879" height="866" alt="image" src="https://github.com/user-attachments/assets/03e90b91-e0c8-4a59-8a3e-5b172705808f" />
+
+
+
 <p>Transactions Management:</p>
-<img width="1883" height="854" alt="image" src="https://github.com/user-attachments/assets/d49abd8e-3a38-483c-a95d-c81c3defa963" />
+<img width="1869" height="866" alt="image" src="https://github.com/user-attachments/assets/7b5309e8-2575-48a7-a3e1-32ad3b62f194" />
+
 
 <p>Add new transactions:</p>
 <img width="1889" height="855" alt="image" src="https://github.com/user-attachments/assets/c72318f1-04ee-4b94-954f-b2c7922401c1" />
 <p>Exported CSV File:</p>
 <img width="1250" height="658" alt="image" src="https://github.com/user-attachments/assets/2731fec8-0fe7-4eb8-98a7-4107e3341565" />
-<p>Light Mode:</p>
-<img width="1860" height="864" alt="image" src="https://github.com/user-attachments/assets/3ea80136-c473-4604-a757-9b5b585c4e83" />
+<p>Dark Mode:</p>
+<img width="1896" height="860" alt="image" src="https://github.com/user-attachments/assets/defbe4bc-6188-43a8-8d56-2e6d89667b18" />
+
 
 <h2>Viewer Interface:</h2>
-<img width="1748" height="850" alt="image" src="https://github.com/user-attachments/assets/4f1c76c1-6a38-4774-aa99-885b46879fee" />
+<img width="1874" height="868" alt="image" src="https://github.com/user-attachments/assets/34484c2f-4a11-42e7-b7e4-525f636aa501" />
 
 <p>Role-Based UI(Read Only Interface):</p>
-<img width="1875" height="859" alt="image" src="https://github.com/user-attachments/assets/d9f292cf-26c3-4d91-963c-d27cc81298b7" />
+<img width="1882" height="866" alt="image" src="https://github.com/user-attachments/assets/2e11e912-15fb-48de-85c0-a207bfad66ed" />
 
 
 
