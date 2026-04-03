@@ -10,6 +10,15 @@ export interface Transaction {
   description: string;
 }
 
+export interface RecurringTransaction {
+  id: string;
+  description: string;
+  amount: number;
+  category: string;
+  type: TransactionType;
+  frequency: "monthly" | "weekly";
+}
+
 export interface Filters {
   search: string;
   type: TransactionType | "all";
